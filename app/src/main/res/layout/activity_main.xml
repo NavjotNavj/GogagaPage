@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            />
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/pager"
+                android:layout_width="wrap_content"
+                android:layout_height="250dp"
+                android:layout_alignParentTop="true" />
+
+
+        </LinearLayout>
+
+
+        <com.github.captain_miao.optroundcardview.OptRoundCardView
+            android:id="@+id/optRoundCardView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+
+            app:layout_constraintBottom_toBottomOf="@+id/imageView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+            app:optRoundCardBackgroundColor="#fff"
+            app:optRoundCardCornerRadius="50dp"
+            app:optRoundCardElevation="0dp"
+            app:optRoundCardLeftBottomCorner="false"
+            app:optRoundCardLeftTopCorner="true"
+            app:optRoundCardRightBottomCorner="false"
+            app:optRoundCardRightTopCorner="true">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Your Activities"
+                        android:textAlignment="center"
+                        android:textColor="#9394B8"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+
+                    <androidx.viewpager.widget.ViewPager
+                        android:foregroundGravity="center"
+                        android:id="@+id/viewPager"
+                        android:layout_centerInParent="true"
+                        android:overScrollMode="never"
+                        android:clipToPadding="false"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                    </androidx.viewpager.widget.ViewPager>
+
+
+
+
+                </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+
+        </com.github.captain_miao.optroundcardview.OptRoundCardView>
+
+<!--        <de.hdodenhof.circleimageview.CircleImageView-->
+<!--            android:layout_width="100dp"-->
+<!--            android:layout_height="100dp"-->
+<!--            android:layout_marginStart="8dp"-->
+<!--            android:layout_marginBottom="8dp"-->
+<!--            android:elevation="0dp"-->
+<!--            android:src="@drawable/user_image"-->
+<!--            app:layout_constraintBottom_toTopOf="@+id/optRoundCardView"-->
+<!--            app:layout_constraintEnd_toEndOf="@+id/imageView"-->
+<!--            app:layout_constraintStart_toStartOf="@+id/imageView"-->
+<!--            app:layout_constraintTop_toTopOf="@+id/optRoundCardView" />-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</RelativeLayout>
